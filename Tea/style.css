@@ -15,8 +15,6 @@ body {
     justify-content: space-between; /*Make header fixed*/
 }
 
-
-
 .nav-items a {
     color: white;
     padding: 10px;
@@ -70,5 +68,37 @@ body {
     margin: 10px 0;
 }
 
-.
+.locations{
+    background-image: url('https://content.codecademy.com/courses/freelance-1/unit-4/img-locations-background.jpg?_gl=1*xaqwbh*_ga*OTQzMzA3OTQyMC4xNzAyMzQ5Njk5*_ga_3LRZM6TM9L*MTcwMzEzMzcwNC4yMC4xLjE3MDMxMzM3MzUuMjkuMC4w');
+    height: 600px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.locations h2{
+    text-align: center;
+    padding: 50px;
+}
+
+.places-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 60px;
+}
+
+.places{
+    height: 250px;
+    width: 300px;
+    border: solid 1px black;
+    background-color: black;
+    text-align: center;
+    margin-left: 40px;
+}
+
+
+.footer{
+    height: 200px;
+    text-align: center;
+}
 
