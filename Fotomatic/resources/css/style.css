@@ -5,6 +5,25 @@ html {
   font-size: 16px;
 }
 
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktop-logo{
+  color: #4a4a4a;
+  font-size: 24px;
+  font-family: Roboto-Mono-Regular;
+}
+
+.desktop{
+  color: #4a4a4a;
+  font-size: 16px;
+  font-family: Roboto-Regular;
+  line-height: 1.6;
+}
+
 .main-content {
   position: relative;
   top: 5.3125rem; /* To offset for fixed header. */
@@ -12,6 +31,8 @@ html {
 
 .center {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
@@ -117,6 +138,7 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  background-image: url('/Fotomatic/resources/images/banner-landingpage.jpg');
 }
 
 #sign-up-cta {
@@ -124,6 +146,10 @@ header .mobile {
   border: solid 1px #979797;
   border-radius: 4px;
   background-color: #9dc20b;
+  position: relative;
+  top: 170px;
+  left: 100px;
+  
 }
 
 #sign-up-cta .content {
