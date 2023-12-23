@@ -245,6 +245,7 @@ header .mobile {
 #features-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 4rem 5%;
   background-color: #f3f3f3;
 
@@ -331,6 +332,8 @@ header .mobile {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+  display: flex;
+  
 }
 
 @media only screen and (max-width: 760px) {
@@ -367,10 +370,13 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
+  height: 160px;
+  margin-top: 80px;
 }
 
 #quotes-section content {
   padding: 5rem 0;
+  
 }
 
 #quotes-section quote {
