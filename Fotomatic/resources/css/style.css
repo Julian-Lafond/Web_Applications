@@ -9,6 +9,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .desktop-logo{
@@ -35,6 +36,10 @@ html {
   flex-direction: column;
 }
 
+.content-1{
+  margin-top: 40px;
+  flex-direction: column;
+}
 .button {
   border-radius: 4px;
   background-color: #4a4a4a;
@@ -43,10 +48,12 @@ html {
 
 .image-container {
   overflow: hidden;
+  width: 50%;
 }
 
 .image-container img {
   display: block;
+  height: 500px;
 }
 
 @media only screen and (max-width: 760px) {
@@ -173,7 +180,7 @@ header .mobile {
   font-weight: bold;
 }
 
-#sign-up-cta .cursive {
+#sign-w-cta .cursive {
   font-family: "Damion", cursive;
 }
 
@@ -240,6 +247,7 @@ header .mobile {
   justify-content: space-between;
   padding: 4rem 5%;
   background-color: #f3f3f3;
+
 }
 
 .feature {
@@ -253,6 +261,7 @@ header .mobile {
   width: 90%;
   height: 65%;
   margin: 0 auto;
+
 }
 
 .feature h2 {
