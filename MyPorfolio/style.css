@@ -2,6 +2,7 @@ body{
     background-color:  #28282B;
     color:white;
 }
+
 .nav-bar{
     display: flex;
     align-items: center;
@@ -21,7 +22,7 @@ body{
     text-decoration: none;
     color: white;
     margin-left: 30px;
-    margin-right: 20px;
+    margin-right: 40px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     
@@ -36,7 +37,7 @@ body{
 
 }
 
-.profile img{
+#profile img{
     position: absolute;
     left: 63%;
     top: 150px;
