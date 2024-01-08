@@ -29,3 +29,14 @@ body{
 
 }
 
+.profile img{
+    position: absolute;
+    left: 63%;
+    top: 150px;
+    height: 450px;
+    width: 450px;
+}
+
+.contact{
+    margin-left: 20px;
+}
