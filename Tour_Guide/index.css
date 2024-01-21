@@ -1,0 +1,33 @@
+
+* {
+    margin: 0;
+}
+.header{
+    background-image: url('img/maui.webp');
+    background-size: cover;
+    background-position: center center;
+    height: 343px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.visit, .description{
+    font-family:'Courier New', Courier, monospace;
+    background-color: darkblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.description{
+    width: 412px;
+    text-align: center;
+}
+
+.activities{
+    
+}
