@@ -1,8 +1,8 @@
-
 * {
     margin: 0;
 }
-.header{
+
+.header {
     background-image: url('img/maui.webp');
     background-size: cover;
     background-position: center center;
@@ -15,19 +15,46 @@
 
 }
 
-.visit, .description{
-    font-family:'Courier New', Courier, monospace;
+.visit,
+.description {
+    font-family: 'Courier New', Courier, monospace;
     background-color: darkblue;
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
 }
 
-.description{
+.description {
     width: 412px;
     text-align: center;
 }
 
-.activities{
-    
+
+.main {
+    margin-top: 20px;
+    background-color: #c9ecf4;
+}
+
+
+.activities-header {
+    color: #1D3557;
+    text-align: center;
+
+
+}
+
+.activities img {
+    height: 220px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.activities {
+    display: flex;
+    justify-content: space-around;
+}
+
+.activity {
+    align-items: center;
+    text-align: center;
 }
