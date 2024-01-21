@@ -31,14 +31,16 @@
 
 
 .main {
-    margin-top: 20px;
     background-color: #c9ecf4;
+    height: 478px;
 }
 
 
 .activities-header {
     color: #1D3557;
     text-align: center;
+    padding-top: 30px;
+    margin-bottom: 50px;
 
 
 }
@@ -57,4 +59,13 @@
 .activity {
     align-items: center;
     text-align: center;
+    width: 300px;
+}
+.activity h3{
+    margin: 15px 15px;
+    font-size: 25px;
+}
+
+.activity p{
+    font-size: 20px;
 }
