@@ -72,3 +72,14 @@
 .activity p{
     font-size: 20px;
 }
+
+.guide{
+    display: flex;
+}
+
+.info{
+    display: block;
+}
+.guide img{
+    height: 400px;
+}
