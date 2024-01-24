@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    color: whitesmoke
+}
+
+#input-el{
+    width: 117px;
+    height: 90px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: blue;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    font-size: 58px;
+    text-align: center;
+    color: white;
+    font-weight: 800px;
+    line-height: 23px;
+}
+
+#button-el{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 117px;
+    height: 42px;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: 500px;
+    font-size: 16px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
