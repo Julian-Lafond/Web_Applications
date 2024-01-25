@@ -39,23 +39,26 @@
     text-decoration: none;
 
 }
-
+body{
+    background-color:#F4F4F4;
+;
+}
 .metric{
     margin-top: 40px;
     font-size: 20px;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     color: #5A537B;
-
-    border: 1px solid black;
+    padding: 20px;
+    border: 1px solid white;
+    background-color: white;
     width: 1000px;
     text-align: center;
-
     list-style-type: none;
 }
 
 p{
-    font-size: 14px;
+    font-size: 16px;
     color:  #353535;
 
 }
