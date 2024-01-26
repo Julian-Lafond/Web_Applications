@@ -53,3 +53,9 @@ li{
     border-radius: 20px;
 
 }
+
+ul li:hover{
+    background-color: blue;
+    border: 1px solid blue;
+    cursor:pointer;
+}

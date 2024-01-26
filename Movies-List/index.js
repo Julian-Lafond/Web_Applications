@@ -26,7 +26,7 @@ onValue(moviesInDB, function (snapshot) {
         let currentItem = moviesArray[i];
         let moviesID = currentItem[0];
         let moviesValue = currentItem[1];
-        appendMovietToMoviesList(moviesValue)
+        appendMovietToMoviesList(currentItem)
     }
 })
 
@@ -41,7 +41,13 @@ function appendMovietToMoviesList(item) {
     let itemId = item[0]
     let itemValue = item[1]
     let newEl = document.createElement("li")
-    newEl.textContent = item;
-    unordered_list_element.append(newEl);
+    newEl.textContent = itemValue;
+
+    newEl.addEventListener("click", function(){
+        let exactLocationofID = ref(database, `movies/${itemId}`)
+        remove(exactLocationofID)
+    })
+    
+    unordered_list_element.append(newEl)
 }
 
