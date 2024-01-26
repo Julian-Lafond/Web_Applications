@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
     databaseURL: "https://playground-63664-default-rtdb.firebaseio.com/"
@@ -20,11 +20,13 @@ button_element.addEventListener("click", function () {
 })
 
 onValue(moviesInDB, function (snapshot) {
-    let moviesArray = Object.values(snapshot.val())
+    let moviesArray = Object.entries(snapshot.val())
     clearBookList();
-    console.log(moviesArray)
     for (let i = 0; i < moviesArray.length; i++) {
-        appendMovietToMoviesList(moviesArray[i])
+        let currentItem = moviesArray[i];
+        let moviesID = currentItem[0];
+        let moviesValue = currentItem[1];
+        appendMovietToMoviesList(moviesValue)
     }
 })
 
@@ -36,5 +38,10 @@ function clearBookList() {
 }
 
 function appendMovietToMoviesList(item) {
-    unordered_list_element.innerHTML += `<li>${item}</li>`
+    let itemId = item[0]
+    let itemValue = item[1]
+    let newEl = document.createElement("li")
+    newEl.textContent = item;
+    unordered_list_element.append(newEl);
 }
+
