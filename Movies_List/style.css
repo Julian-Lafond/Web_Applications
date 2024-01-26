@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+img{
+    width: 200px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input-el{
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    background-color:blanchedalmond;
+    margin-top: 20px;
+    border: 1px solid blanchedalmond;   
+}
+
+#button-el{
+    padding: 10px;
+    width: 225px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color:skyblue;
+    border: 1px solid skyblue;   
+   
+}
+
+#button-el:hover{
+    cursor: pointer;
+}
+
+#ul-el{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+li{
+    list-style-type: none;
+    border: 1px solid red;
+    padding: 20px;
+    background-color: red;
+    border-radius: 20px;
+
+}
