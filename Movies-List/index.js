@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push, onValue, remove} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
     databaseURL: "https://playground-63664-default-rtdb.firebaseio.com/"
@@ -20,13 +20,18 @@ button_element.addEventListener("click", function () {
 })
 
 onValue(moviesInDB, function (snapshot) {
-    let moviesArray = Object.entries(snapshot.val())
-    clearBookList();
-    for (let i = 0; i < moviesArray.length; i++) {
-        let currentItem = moviesArray[i];
-        let moviesID = currentItem[0];
-        let moviesValue = currentItem[1];
-        appendMovietToMoviesList(currentItem)
+    if (snapshot.exists()) {
+        let moviesArray = Object.entries(snapshot.val())
+        clearBookList();
+        for (let i = 0; i < moviesArray.length; i++) {
+            let currentItem = moviesArray[i];
+            let moviesID = currentItem[0];
+            let moviesValue = currentItem[1];
+            appendMovietToMoviesList(currentItem)
+        }
+    }
+    else {
+        unordered_list_element.innerHTML = "No Movies yet.."
     }
 })
 
@@ -43,11 +48,11 @@ function appendMovietToMoviesList(item) {
     let newEl = document.createElement("li")
     newEl.textContent = itemValue;
 
-    newEl.addEventListener("click", function(){
+    newEl.addEventListener("click", function () {
         let exactLocationofID = ref(database, `movies/${itemId}`)
         remove(exactLocationofID)
     })
-    
+
     unordered_list_element.append(newEl)
 }
 
