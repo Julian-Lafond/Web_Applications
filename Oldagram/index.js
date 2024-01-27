@@ -43,7 +43,10 @@ placement_post.innerHTML = `
             <img src = "${first_post.avatar}" alt = "avatar" class = "avatar" />
             <h1>${first_post.name}</h1>
             <p class = "location">${first_post.location}</p>
+            <img src = "${first_post.post}" class = "post"/>
+            
         </section>
+
     </main>
 
 `
