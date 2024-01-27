@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+}
+
+
+
+.oldagram {
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 100;
+}
+
+.pfp {
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    border-radius: 100%;
+}
+
+.top {
+    display: flex;
+    padding: 20px;
+
+}
+
+
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+
+.location {
+    margin-top: -15px;
+}
