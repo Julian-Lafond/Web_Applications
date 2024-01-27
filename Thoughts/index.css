@@ -1,5 +1,8 @@
-
-
+body{
+    margin: 0;
+    padding: 0;
+    
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -42,3 +45,18 @@ img{
 #button-el:hover{
     cursor: pointer;
 }
+
+li {
+    list-style-type: none;
+    border: 1px solid wheat;    
+    background-color: wheat;
+    font-size: 20px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+
+
