@@ -1,10 +1,8 @@
-const talkBtn = document.getElementById('talk-btn')
-const chatInput = document.getElementById('cha-input')
+import {tweetsData} from './data.js'
 
+const tweetInput = document.getElementById('tweet-input')
+const tweetBtn = document.getElementById('tweet-btn')
 
-
-talkBtn.addEventListener('click', function(){
-    console.log(chatInput.value)
-    chatInput.value = ' '
+tweetBtn.addEventListener('click', function(){
+    console.log(tweetInput.value)
 })
-
