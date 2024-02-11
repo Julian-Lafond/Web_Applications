@@ -16,11 +16,11 @@ body {
     color: white;
 }
 
-.slogan{
+.slogan {
     margin-top: 5px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     margin-left: 60px;
@@ -28,20 +28,17 @@ body {
 
 }
 
-.emoji{
-    font-size: 50px;
+.emoji {
+    font-size: 60px;
     margin-right: 20px;
 }
 
-hr{
+hr {
     width: 1300px
 }
 
-
-
-
-
-
-
-
-
+.menuItems {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
