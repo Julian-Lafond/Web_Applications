@@ -8,12 +8,12 @@ const menuArray = [
     },
     {
         name: "Salmon Roll",
-        ingredients: ["Rice", "Salmon", "Cucmber"],
+        ingredients: ["Rice", "Salmon", "Cucumber"],
         price: 10,
         emoji: "🍣",
         id: 1
     },
-        {
+    {
         name: "Gyoza",
         ingredients: ["Pork", "Green Onions"],
         price: 8,
