@@ -7,14 +7,15 @@ function getData(menuArray) {
     let menuItems = ""
     for (let item of menuArray) {
         menuItems += `
-            <div class = "menuItems">
-                <p>${item.emoji}</p>
-                <h1>${item.name}</h1>
-                <h3>${item.ingredients}</h3>
-                <h2>${item.price}</h2>
-
+            <div class = "container">
+                <p class = "emoji">${item.emoji}</p>
+                <div class = "menuItems">
+                    <h1>${item.name}</h1>
+                    <h3>${item.ingredients}</h3>
+                    <h2>$${item.price}</h2>
+                    <hr>
+                </div>
             </div>
-        
         `
     }
     get_menu.innerHTML = menuItems

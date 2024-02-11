@@ -20,19 +20,28 @@ body {
     margin-top: 5px;
 }
 
-.cali-img, .salmon-img{
-    width: 200px;
-    height: 200px;
-    margin-left: 100px;
+.container{
+    display: flex;
+    justify-content: center;
+    margin-left: 60px;
     margin-top: 20px;
 
 }
-.california,.salmon, .tuna{
-    display: flex;
-    align-items: center;
+
+.emoji{
+    font-size: 50px;
+    margin-right: 20px;
 }
 
-.california-text{
-    margin-left: 20px;
-
+hr{
+    width: 1300px
 }
+
+
+
+
+
+
+
+
+
