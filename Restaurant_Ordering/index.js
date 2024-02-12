@@ -1,6 +1,8 @@
 import menuArray from './data.js';
 
 let get_menu = document.getElementById("menu");
+let addPlaceholder = document.querySelector(".add-placeholder");
+let addedItemsContainer = document.getElementById("added-items-container");
 
 let add = '';
 
@@ -34,7 +36,6 @@ menuArray.forEach(item => {
 // Append dynamically generated menu items to the menu container
 get_menu.innerHTML = add;
 
-// Append "Add" button to the add placeholder
 
 // Event delegation for "Add" buttons
 document.addEventListener("click", function(event) {
@@ -42,5 +43,20 @@ document.addEventListener("click", function(event) {
         // Get the ID of the clicked button using dataset
         let itemId = event.target.dataset.id;
         console.log("Button clicked for item with ID:", itemId);
+        
+        // Display information at the bottom of the page
+        displayAddedItem(itemId);
     }
 });
+
+// Function to display added item information
+function displayAddedItem(itemId) { 
+    let addItem = `
+        <div class = "added-item">
+            <p>${itemId}</p>
+        </div>
+    `
+    
+    addedItemsContainer.innerHTML = addItem
+
+}
