@@ -36,27 +36,3 @@ menuArray.forEach(item => {
 // Append dynamically generated menu items to the menu container
 get_menu.innerHTML = add;
 
-
-// Event delegation for "Add" buttons
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("add-item")) {
-        // Get the ID of the clicked button using dataset
-        let itemId = event.target.dataset.id;
-        console.log("Button clicked for item with ID:", itemId);
-        
-        // Display information at the bottom of the page
-        displayAddedItem(itemId);
-    }
-});
-
-// Function to display added item information
-function displayAddedItem(itemId) { 
-    let addItem = `
-        <div class = "added-item">
-            <p>${itemId}</p>
-        </div>
-    `
-    
-    addedItemsContainer.innerHTML = addItem
-
-}
