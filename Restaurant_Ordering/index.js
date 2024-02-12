@@ -1,8 +1,8 @@
-import menuArray from './data.js'
+import menuArray from './data.js';
 
-let get_menu = document.getElementById("menu")
+let get_menu = document.getElementById("menu");
 
-let add = ''
+let add = '';
 
 // Loop through each item in the menuArray
 menuArray.forEach(item => {
@@ -11,28 +11,36 @@ menuArray.forEach(item => {
     const ingredients = item.ingredients;
     const price = item.price;
     const emoji = item.emoji;
+    const id = item.id;
 
     // Concatenate the ingredients into a string
     const ingredientsString = ingredients.join(", "); // Join with a comma and space
     add += `
-    <div class = "container">
-        <p class = "emoji">${emoji}</p>
-        <div class = "menuItems">
+    <div class="container">
+        <p class="emoji">${emoji}</p>
+        <div class="menuItems">
             <h1>${name}</h1>
             <h3>${ingredientsString}</h3>
             <h2>$${price}</h2>
-            <div class = "add">
-                <h1>add button</h1>
-            </div>
             <hr>
         </div>
+        <div class="add">
+            <button class="add-item" data-id="${id}">Add</button> <!-- Set data-id to the item's ID -->
+        </div>
     </div>
-
-    
-
-    `
+    `;
 });
 
-get_menu.innerHTML = add
+// Append dynamically generated menu items to the menu container
+get_menu.innerHTML = add;
 
+// Append "Add" button to the add placeholder
 
+// Event delegation for "Add" buttons
+document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("add-item")) {
+        // Get the ID of the clicked button using dataset
+        let itemId = event.target.dataset.id;
+        console.log("Button clicked for item with ID:", itemId);
+    }
+});
