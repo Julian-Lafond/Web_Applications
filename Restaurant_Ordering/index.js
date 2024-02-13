@@ -27,12 +27,39 @@ menuArray.forEach(item => {
             <hr>
         </div>
         <div class="add">
-            <button class="add-item" data-id="${id}">Add</button> <!-- Set data-id to the item's ID -->
+            <button class="add-item" data-id="${id}">Add</button> 
         </div>
     </div>
     `;
+
 });
 
 // Append dynamically generated menu items to the menu container
 get_menu.innerHTML = add;
+
+get_menu.addEventListener('click', function (e) {
+    if (!addedItemsContainer.querySelector('.orders')) {
+        addedItemsContainer.innerHTML = `<h3 class="orders">Your Order</h3>`;
+    }
+    if (e.target.dataset.id) {
+        displayItems(e.target.dataset.id)
+    }
+    console.log(e.target.dataset.id)
+})
+
+function displayItems(itemsId) {
+    const idObj = menuArray.filter(function (item) {
+        return item.id == itemsId
+    })[0]
+    addedItemsContainer.innerHTML += `
+    <div class = "checkout">
+        <ul>
+            <li>${idObj.name}</li>
+        </ul>
+        <p>${idObj.price}</p>
+    </div>
+    `
+}
+
+
 

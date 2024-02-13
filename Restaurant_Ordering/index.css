@@ -51,7 +51,8 @@ hr {
 
 /* Add button styling */
 .add-item {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
+    /* Green */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -66,5 +67,22 @@ hr {
 }
 
 .add-item:hover {
-    background-color: #45a049; /* Darker Green */
+    background-color: #45a049;
+    /* Darker Green */
+}
+
+.checkout {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.orders {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+
 }
