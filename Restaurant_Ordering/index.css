@@ -84,5 +84,10 @@ hr {
 
 ul {
     list-style-type: none;
+}
 
+
+.add-item {
+    position: relative;
+    right: 70px;
 }

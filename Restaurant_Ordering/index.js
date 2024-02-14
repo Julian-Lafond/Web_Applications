@@ -1,7 +1,6 @@
 import menuArray from './data.js';
 
 let get_menu = document.getElementById("menu");
-let addPlaceholder = document.querySelector(".add-placeholder");
 let addedItemsContainer = document.getElementById("added-items-container");
 
 let add = '';
@@ -47,19 +46,23 @@ get_menu.addEventListener('click', function (e) {
     console.log(e.target.dataset.id)
 })
 
+let total = 0
 function displayItems(itemsId) {
-    const idObj = menuArray.filter(function (item) {
-        return item.id == itemsId
-    })[0]
+    const idObj = menuArray.find(item => item.id == itemsId);
     addedItemsContainer.innerHTML += `
-    <div class = "checkout">
+    <div class="checkout">
         <ul>
             <li>${idObj.name}</li>
         </ul>
-        <p>${idObj.price}</p>
-    </div>
-    `
-}
+        <div class="price">
+            $${idObj.price}
+        </div>
+    </div> 
+    <div class = "total">
+        <p>Total: ${total += idObj.price} </p>
+    </div> 
+    `;
 
+}
 
 
