@@ -2,7 +2,7 @@ import menuArray from './data.js';
 
 let get_menu = document.getElementById("menu");
 let addedItemsContainer = document.getElementById("added-items-container");
-
+let totalItems = document.getElementById("total-items-container")
 let add = '';
 
 // Loop through each item in the menuArray
@@ -48,7 +48,9 @@ get_menu.addEventListener('click', function (e) {
 
 let total = 0
 function displayItems(itemsId) {
+
     const idObj = menuArray.find(item => item.id == itemsId);
+    total += idObj.price
     addedItemsContainer.innerHTML += `
     <div class="checkout">
         <ul>
@@ -58,11 +60,22 @@ function displayItems(itemsId) {
             $${idObj.price}
         </div>
     </div> 
-    <div class = "total">
-        <p>Total: ${total += idObj.price} </p>
-    </div> 
     `;
+    displayTotal(total)
 
 }
 
 
+
+
+function displayTotal(total) {
+    totalItems.innerHTML = `
+    <hr class = "checkout">
+    <div class = "total">
+        <h5>Total Price:</h5>
+        <div class = "price">
+            <h5>$${total}</h5>
+        </div>
+    </div>
+    `
+}
