@@ -53,9 +53,13 @@ function displayItems(itemsId) {
     total += idObj.price
     addedItemsContainer.innerHTML += `
     <div class="checkout">
-        <ul>
-            <li>${idObj.name}</li>
-        </ul>
+        <div class = "remove">
+            <ul>
+                <li>${idObj.name}</li>
+            </ul>
+            <button class = "remove-item">Remove</button>
+
+        </div>
         <div class="price">
             $${idObj.price}
         </div>
