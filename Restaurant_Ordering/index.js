@@ -1,20 +1,27 @@
 import menuArray from './data.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+const appSettings = {
+    databaseURL: "https://restaurants-cee35-default-rtdb.firebaseio.com/"
+}
+
+const app = initializeApp(appSettings) 	//connect our project with firebase
+const database = getDatabase(app)		//connect your application to firebase
+const restaurantsinDB = ref(database, "Restaurants") 	//create a reference so that everything is 
 
 let get_menu = document.getElementById("menu");
 let addedItemsContainer = document.getElementById("added-items-container");
 let totalItems = document.getElementById("total-items-container")
 let add = '';
 
-// Loop through each item in the menuArray
 menuArray.forEach(item => {
-    // Access the properties of the current item
     const name = item.name;
     const ingredients = item.ingredients;
     const price = item.price;
     const emoji = item.emoji;
     const id = item.id;
 
-    // Concatenate the ingredients into a string
     const ingredientsString = ingredients.join(", "); // Join with a comma and space
     add += `
     <div class="container">
@@ -33,7 +40,6 @@ menuArray.forEach(item => {
 
 });
 
-// Append dynamically generated menu items to the menu container
 get_menu.innerHTML = add;
 
 get_menu.addEventListener('click', function (e) {
@@ -43,12 +49,11 @@ get_menu.addEventListener('click', function (e) {
     if (e.target.dataset.id) {
         displayItems(e.target.dataset.id)
     }
-    console.log(e.target.dataset.id)
+
 })
 
 let total = 0
 function displayItems(itemsId) {
-
     const idObj = menuArray.find(item => item.id == itemsId);
     total += idObj.price
     addedItemsContainer.innerHTML += `
@@ -57,8 +62,7 @@ function displayItems(itemsId) {
             <ul>
                 <li>${idObj.name}</li>
             </ul>
-            <button class = "remove-item">Remove</button>
-
+            <button class = "remove-item" data-id="${idObj.id}">Remove</button>
         </div>
         <div class="price">
             $${idObj.price}
@@ -69,8 +73,26 @@ function displayItems(itemsId) {
 
 }
 
+// Other parts of your code remain the same...
 
-
+// Event listener for remove buttons
+addedItemsContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('remove-item')) {
+        const itemId = e.target.dataset.id;
+        removeItem(itemId);
+    }
+});
+// Function to remove items
+function removeItem(itemId) {
+    const itemElement = addedItemsContainer.querySelector(`[data-id="${itemId}"]`).parentNode.parentNode;
+    if (itemElement) {
+        const itemPriceText = itemElement.querySelector('.price').textContent.trim();
+        const itemPrice = parseFloat(itemPriceText.substring(1));
+        total -= itemPrice;
+        displayTotal(total);
+        addedItemsContainer.removeChild(itemElement);
+    }
+}
 
 function displayTotal(total) {
     totalItems.innerHTML = `
