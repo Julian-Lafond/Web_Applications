@@ -1,19 +1,10 @@
 import menuArray from './data.js';
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
-
-const appSettings = {
-    databaseURL: "https://restaurants-cee35-default-rtdb.firebaseio.com/"
-}
-
-const app = initializeApp(appSettings) 	//connect our project with firebase
-const database = getDatabase(app)		//connect your application to firebase
-const restaurantsinDB = ref(database, "Restaurants") 	//create a reference so that everything is 
 
 let get_menu = document.getElementById("menu");
 let addedItemsContainer = document.getElementById("added-items-container");
 let totalItems = document.getElementById("total-items-container")
 let add = '';
+
 
 menuArray.forEach(item => {
     const name = item.name;
@@ -73,16 +64,15 @@ function displayItems(itemsId) {
 
 }
 
-// Other parts of your code remain the same...
 
-// Event listener for remove buttons
 addedItemsContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('remove-item')) {
         const itemId = e.target.dataset.id;
         removeItem(itemId);
     }
 });
-// Function to remove items
+
+
 function removeItem(itemId) {
     const itemElement = addedItemsContainer.querySelector(`[data-id="${itemId}"]`).parentNode.parentNode;
     if (itemElement) {
@@ -103,5 +93,23 @@ function displayTotal(total) {
             <h5>$${total}</h5>
         </div>
     </div>
+    <div class = "completed-container">
+        <button class = "completed">Complete Order</button>
+    </div>
     `
 }
+
+totalItems.addEventListener('click', function(e) {
+    if (e.target.classList.contains("completed")) {
+        get_menu.innerHTML += `
+            <form id="credit-form" class="credit-form">
+                <label for="credit">Enter Credit Card Details</label>
+                    <input type="text" id="credit" name="name" placeholder="Enter your name">
+                    <input type="text" id="credit" name="credit" placeholder="Enter card number">
+                    <input type="text" id="credit" name="credit" placeholder="Enter CVV">
+                <button class = "submit-form">Submit</button>
+            </form>
+        `;
+    }
+});
+
