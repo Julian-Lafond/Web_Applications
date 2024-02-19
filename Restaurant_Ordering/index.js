@@ -99,17 +99,38 @@ function displayTotal(total) {
     `
 }
 
-totalItems.addEventListener('click', function(e) {
+totalItems.addEventListener('click', function (e) {
     if (e.target.classList.contains("completed")) {
         get_menu.innerHTML += `
             <form id="credit-form" class="credit-form">
-                <label for="credit">Enter Credit Card Details</label>
-                    <input type="text" id="credit" name="name" placeholder="Enter your name">
-                    <input type="text" id="credit" name="credit" placeholder="Enter card number">
-                    <input type="text" id="credit" name="credit" placeholder="Enter CVV">
+                    <label for="credit">Enter Credit Card Details</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" id="credit" name="credit" placeholder="Enter card number" required>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
                 <button class = "submit-form">Submit</button>
             </form>
         `;
+
+
+        const get_id = document.getElementById("credit-form")
+        get_id.addEventListener('submit', function (event) {
+            event.preventDefault()
+            const form_data = new FormData(get_id)
+            const name = form_data.get('name')
+            addedItemsContainer.innerHTML = ''
+            totalItems.innerHTML = `<p id = "submitted">Thanks ${name}, Your order is on the way </p>`
+            get_menu.removeChild(get_id)
+            // Remove the form and addedItemsContainer from the DOM
+            if (get_menu.contains(get_id)) {
+                get_menu.removeChild(get_id);
+            }
+
+            // Optionally, remove addedItemsContainer from the DOM
+            if (get_menu.contains(addedItemsContainer)) {
+                get_menu.removeChild(addedItemsContainer);
+            }
+        })
+
     }
 });
 

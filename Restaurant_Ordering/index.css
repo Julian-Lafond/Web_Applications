@@ -194,3 +194,39 @@ ul {
 #credit {
     /* Add your specific styling for the credit card input field if needed */
 }
+
+#submitted {
+    text-align: center;
+}
+
+.submit-form {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 16px; /* Increase font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.submit-form:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+#submitted {
+    font-size: 18px;
+    color: #34a853; /* Green color */
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e6f7e9; /* Light green background color */
+    border-radius: 10px;
+    border: 1px solid #34a853;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#submitted::before {
+    content: '\1F60A'; /* Unicode smiley face character */
+    font-size: 24px;
+    margin-right: 10px;
+}
